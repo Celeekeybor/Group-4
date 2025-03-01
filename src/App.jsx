@@ -6,6 +6,8 @@ import JoinGDG from './pages/JoinGDG';  // Import page components
 import Support from './pages/Support';
 import About from './pages/About';
 import ContactUs from './pages/Contact_Us';  // Adjust the import name to match your file name
+import FeedbackButton from './components/feedback';  // Import the FeedbackButton component
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,7 +27,8 @@ function App() {
         </Routes>
 
         
-
+        {/* Insert the FeedbackButton component here */}
+        <FeedbackButton />
         {/* Footer
         <footer>
           <p>© 2025 Your Company</p>

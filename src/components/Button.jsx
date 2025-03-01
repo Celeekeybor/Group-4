@@ -1,13 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import './Button.css'; // Import CSS for styling
+import { useNavigate } from 'react-router-dom';
 
 function Button() {
-  const navigate = useNavigate(); // Initialize the navigate function
-
   const handleButtonClick = (route) => {
-    // Use navigate to go to the specified route within the same tab
-    navigate(route); 
+    window.location.href = window.location.origin + route; // Uses full page reload with the correct origin
   };
 
   return (
