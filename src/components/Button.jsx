@@ -1,26 +1,30 @@
 import React from 'react';
-import './Button.css'; // Import CSS for styling
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Import Link for navigation
+import './Button.css';
 
 function Button() {
-  const handleButtonClick = (route) => {
-    window.location.href = window.location.origin + route; // Uses full page reload with the correct origin
-  };
-
   return (
     <div className="buttons-container">
-      <button className="button" onClick={() => handleButtonClick('/join-gdg')}>
+      {/* External link button */}
+      <button
+        className="button"
+        onClick={() => window.location.assign('https://gdg.community.dev/gdg-on-campus-maseno-university-kisumu-kenya/')}
+      >
         Join GDG
       </button>
-      <button className="button" onClick={() => handleButtonClick('/support')}>
-        Support
-      </button>
-      <button className="button" onClick={() => handleButtonClick('/about')}>
-        About
-      </button>
-      <button className="button" onClick={() => handleButtonClick('/contact-us')}>
-        Contact Us
-      </button>
+
+      {/* Internal navigation buttons */}
+      <Link to="/support">
+        <button className="button">Support</button>
+      </Link>
+
+      <Link to="/about">
+        <button className="button">About</button>
+      </Link>
+
+      <Link to="/contact-us">
+        <button className="button">Contact Us</button>
+      </Link>
     </div>
   );
 }
